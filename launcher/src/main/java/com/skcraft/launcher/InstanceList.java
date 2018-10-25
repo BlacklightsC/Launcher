@@ -188,7 +188,7 @@ public class InstanceList {
                     }
                 }
             } catch (IOException e) {
-                throw new IOException("The list of modpacks could not be downloaded.", e);
+                throw new IOException("\ubaa8\ub4dc\ud329 \ubaa9\ub85d\uc744 \ub2e4\uc6b4\ub85c\ub4dc \ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.", e);
             } finally {
                 synchronized (InstanceList.this) {
                     instances.clear();
