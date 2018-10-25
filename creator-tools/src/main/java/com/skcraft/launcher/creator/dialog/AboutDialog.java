@@ -25,7 +25,7 @@ public class AboutDialog extends JDialog {
     private String version;
 
     public AboutDialog(Window parent) {
-        super(parent, "About", ModalityType.DOCUMENT_MODAL);
+        super(parent, "\uc815\ubcf4", ModalityType.DOCUMENT_MODAL);
 
         try {
             Properties properties = LauncherUtils.loadProperties(Creator.class, "creator.properties", "com.skcraft.creator.propertiesFile");
@@ -47,13 +47,13 @@ public class AboutDialog extends JDialog {
         container.setLayout(new MigLayout("insets dialog"));
 
         container.add(new JLabel(SwingHelper.createIcon(Creator.class, "about_header.png")), "dock north");
-        container.add(new JLabel("<html>Version " + version), "wrap");
-        container.add(new JLabel("<html>Licensed under GNU Lesser General Public License, version 3."), "wrap, gapbottom unrel");
-        container.add(new JLabel("<html>Created by the SKCraft team. Visit our website!"), "wrap, gapbottom unrel");
+        container.add(new JLabel("<html>\ubc84\uc804 " + version), "wrap");
+        container.add(new JLabel("<html>GNU \uc57d\uc18c \uc77c\ubc18 \uacf5\uc911 \uc0ac\uc6a9 \ud5c8\uac00\uc11c, \ubc84\uc804 3"), "wrap, gapbottom unrel");
+        container.add(new JLabel("<html>SKCraft \ud300\uc5d0\uc11c \uc81c\uc791\ud588\uc2b5\ub2c8\ub2e4. \uc6b0\ub9ac \ud648\ud398\uc774\uc9c0\uc5d0 \ubc29\ubb38 \ud574\uc8fc\uc138\uc694!"), "wrap, gapbottom unrel");
 
-        JButton okButton = new JButton("OK");
-        JButton sourceCodeButton = new JButton("Source Code");
-        JButton skCraftButton = new JButton("Website");
+        JButton okButton = new JButton("\ud655\uc778");
+        JButton sourceCodeButton = new JButton("\uc18c\uc2a4 \ucf54\ub4dc");
+        JButton skCraftButton = new JButton("\uc6f9\uc0ac\uc774\ud2b8");
 
         container.add(sourceCodeButton, "span, split 3, sizegroup bttn");
         container.add(skCraftButton, "sizegroup bttn");

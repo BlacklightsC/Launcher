@@ -39,39 +39,34 @@ public class ProblemChecker implements Callable<List<Problem>>, ProgressObservab
         String[] files;
 
         if (new File(packDir, "_CLIENT").exists()) {
-            problems.add(new Problem("Root _CLIENT", "There's a _CLIENT folder that's not in " +
-                    "the src/ folder. Only files that are in src/ will actually appear in the " +
-                    "modpack, so you probably intended to put _CLIENT in src/."));
+            problems.add(new Problem("\uc678\ubd80\uc5d0 _CLIENT\uac00 \uc874\uc7ac", "src \ud3f4\ub354 \uc678\ubd80\uc5d0 \uc788\ub294 _CLIENT \ud3f4\ub354\uac00 \uc788\uc2b5\ub2c8\ub2e4. " +
+                    "src \ud3f4\ub354\uc5d0 \uc788\ub294 \ud30c\uc77c\ub4e4\ub9cc \ubaa8\ub4dc\ud329\uc5d0 \uc2e4\uc81c\ub85c \ub098\ud0c0\ub0a0 \uac83\uc774\ubbc0\ub85c _CLIENT \ud3f4\ub354\ub97c src \ud3f4\ub354 \ub0b4\ubd80\ub85c \ub123\uc5b4\uc57c\ud569\ub2c8\ub2e4."));
         }
 
         if (new File(packDir, "_SERVER").exists()) {
-            problems.add(new Problem("Root _SERVER", "There's a _SERVER folder that's not in " +
-                    "the src/ folder. Only files that are in src/ will actually appear in the " +
-                    "modpack, so you probably intended to put _SERVER in src/."));
+            problems.add(new Problem("\uc678\ubd80\uc5d0 _SERVER\uac00 \uc874\uc7ac", "src \ud3f4\ub354 \uc678\ubd80\uc5d0 \uc788\ub294 _SERVER \ud3f4\ub354\uac00 \uc788\uc2b5\ub2c8\ub2e4. " +
+                    "src \ud3f4\ub354\uc5d0 \uc788\ub294 \ud30c\uc77c\ub4e4\ub9cc \ubaa8\ub4dc\ud329\uc5d0 \uc2e4\uc81c\ub85c \ub098\ud0c0\ub0a0 \uac83\uc774\ubbc0\ub85c _SERVER \ud3f4\ub354\ub97c src \ud3f4\ub354 \ub0b4\ubd80\ub85c \ub123\uc5b4\uc57c\ud569\ub2c8\ub2e4."));
         }
 
         if (new File(packDir, "mods").exists()) {
-            problems.add(new Problem("Root mods", "There's a mods folder that's not in " +
-                    "the src/ folder. Only files that are in src/ will actually appear in the " +
-                    "modpack."));
+            problems.add(new Problem("\uc678\ubd80\uc5d0 mods\uac00 \uc874\uc7ac", "src \ud3f4\ub354 \uc678\ubd80\uc5d0 \uc788\ub294 mods \ud3f4\ub354\uac00 \uc788\uc2b5\ub2c8\ub2e4. " +
+                    "src \ud3f4\ub354\uc5d0 \uc788\ub294 \ud30c\uc77c\ub4e4\ub9cc \ubaa8\ub4dc\ud329\uc5d0 \uc2e4\uc81c\ub85c \ub098\ud0c0\ub0a9\ub2c8\ub2e4."));
         }
 
         if (new File(packDir, "config").exists()) {
-            problems.add(new Problem("Root mods", "There's a config folder that's not in " +
-                    "the src/ folder. Only files that are in src/ will actually appear in the " +
-                    "modpack."));
+            problems.add(new Problem("\uc678\ubd80\uc5d0 config\uac00 \uc874\uc7ac", "src \ud3f4\ub354 \uc678\ubd80\uc5d0 \uc788\ub294 config \ud3f4\ub354\uac00 \uc788\uc2b5\ub2c8\ub2e4. " +
+                    "src \ud3f4\ub354\uc5d0 \uc788\ub294 \ud30c\uc77c\ub4e4\ub9cc \ubaa8\ub4dc\ud329\uc5d0 \uc2e4\uc81c\ub85c \ub098\ud0c0\ub0a9\ub2c8\ub2e4."));
         }
 
         if (new File(packDir, "version.json").exists()) {
-            problems.add(new Problem("Legacy version.json", "There's a version.json file in the " +
-                    "project directory. If you are upgrading your modpack from an old version " +
-                    "of the launcher, then you should be able to delete version.json as it is " +
-                    "no longer needed to create a modpack. If you are intentionally overriding the " +
-                    "Minecraft version manifest, then ignore this warning."));
+            problems.add(new Problem("\uc774\uc804 \ubc84\uc804\uc758 version.json", "\ud504\ub85c\uc81d\ud2b8 \ub514\ub809\ud1a0\ub9ac\uc5d0 version.json \ud30c\uc77c\uc774 \uc788\uc2b5\ub2c8\ub2e4. " +
+                    "\uc774\uc804 \ubc84\uc804\uc758 \uc2e4\ud589 \ud504\ub85c\uadf8\ub7a8\uc5d0\uc11c \ubaa8\ub4dc\ud329\uc744 \uc5c5\uadf8\ub808\uc774\ub4dc\ud558\ub294 \uacbd\uc6b0 \ubaa8\ub4dc\ud329\uc744 \uc791\uc131\ud558\ub294 \ub370\uc5d0 \uc788\uc5b4 " +
+                    "\ub354 \uc774\uc0c1 \ud544\uc694\ud558\uc9c0 \uc54a\uc73c\ubbc0\ub85c, version.json\uc744 \uc0ad\uc81c\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4. \uc758\ub3c4\uc801\uc73c\ub85c Minecraft \ubc84\uc804 " +
+                    "\ub9e4\ub2c8\ud398\uc2a4\ud2b8\ub97c \uc7ac\uc815\uc758 \ud558\ub294 \uacbd\uc6b0, \uc774 \uacbd\uace0\ub97c \ubb34\uc2dc\ud558\uc138\uc694."));
         }
 
         if (hasMods && !hasLoaders) {
-            problems.add(new Problem("No Loaders", "There appears to be a mods/ folder but there's no mod loaders in loaders/."));
+            problems.add(new Problem("\ubaa8\ub4dc\ub85c\ub354\uac00 \uc5c6\uc74c", "mods \ud3f4\ub354\uac00 \uc874\uc7ac\ud558\uc9c0\ub9cc, loaders \ud3f4\ub354 \uc18d\uc5d0 \ubaa8\ub4dc\ub85c\ub354\uac00 \uc874\uc7ac\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4."));
         }
 
         return problems;
@@ -84,7 +79,7 @@ public class ProblemChecker implements Callable<List<Problem>>, ProgressObservab
 
     @Override
     public String getStatus() {
-        return "Checking for problems...";
+        return "\ubb38\uc81c \uac80\uc0c9 \uc911...";
     }
 
     private static boolean hasFiles(File dir) {

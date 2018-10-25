@@ -23,11 +23,11 @@ public class FeaturePatternTableModel extends AbstractTableModel {
     public String getColumnName(int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return "Feature";
+                return "\uae30\ub2a5";
             case 1:
-                return "Recommendation";
+                return "\ucd94\ucc9c\ub3c4";
             case 2:
-                return "Default?";
+                return "\uae30\ubcf8\uac12?";
             default:
                 return null;
         }
@@ -74,7 +74,7 @@ public class FeaturePatternTableModel extends AbstractTableModel {
             case 1:
                 return features.get(rowIndex).getFeature().getRecommendation();
             case 2:
-                return features.get(rowIndex).getFeature().isSelected() ? "Yes" : "";
+                return features.get(rowIndex).getFeature().isSelected() ? "\u25cb" : "";
             default:
                 return null;
         }

@@ -21,46 +21,46 @@ import java.awt.event.KeyEvent;
 
 public class PackManagerFrame extends JFrame {
 
-    @Getter private final JButton newPackButton = new JButton("New Pack", SwingHelper.createIcon(Creator.class, "new.png"));
-    @Getter private final JButton importButton = new JButton("Add Existing", SwingHelper.createIcon(Creator.class, "import.png"));
-    @Getter private final JButton editConfigButton = new JButton("Modify", SwingHelper.createIcon(Creator.class, "edit.png"));
-    @Getter private final JButton openFolderButton = new JButton("Open", SwingHelper.createIcon(Creator.class, "open_folder.png"));
-    @Getter private final JButton checkProblemsButton = new JButton("Check", SwingHelper.createIcon(Creator.class, "check.png"));
-    @Getter private final JButton testButton = new JButton("Test", SwingHelper.createIcon(Creator.class, "test.png"));
-    @Getter private final JButton buildButton = new JButton("Build", SwingHelper.createIcon(Creator.class, "build.png"));
+    @Getter private final JButton newPackButton = new JButton("\uc0c8 \ud328\ud0a4\uc9c0", SwingHelper.createIcon(Creator.class, "new.png"));
+    @Getter private final JButton importButton = new JButton("\uae30\uc874 \ud328\ud0a4\uc9c0", SwingHelper.createIcon(Creator.class, "import.png"));
+    @Getter private final JButton editConfigButton = new JButton("\ud3b8\uc9d1", SwingHelper.createIcon(Creator.class, "edit.png"));
+    @Getter private final JButton openFolderButton = new JButton("\uc5f4\uae30", SwingHelper.createIcon(Creator.class, "open_folder.png"));
+    @Getter private final JButton checkProblemsButton = new JButton("\uac80\uc99d", SwingHelper.createIcon(Creator.class, "check.png"));
+    @Getter private final JButton testButton = new JButton("\ud14c\uc2a4\ud2b8", SwingHelper.createIcon(Creator.class, "test.png"));
+    @Getter private final JButton buildButton = new JButton("\ube4c\ub4dc", SwingHelper.createIcon(Creator.class, "build.png"));
 
-    @Getter private final JMenuItem newPackMenuItem = new JMenuItem("New Pack...");
-    @Getter private final JMenuItem newPackAtLocationMenuItem = new JMenuItem("New Pack at Location...");
-    @Getter private final JMenuItem importPackMenuItem = new JMenuItem("Add Existing Pack...");
-    @Getter private final JMenuItem changePackLocationMenuItem = new JMenuItem("Change Pack Location...");
-    @Getter private final JMenuItem refreshMenuItem = new JMenuItem("Reload Workspace");
-    @Getter private final JMenuItem removePackItem = new JMenuItem("Remove Pack...");
-    @Getter private final JMenuItem deletePackItem = new JMenuItem("Delete Pack Forever...");
-    @Getter private final JMenuItem quitMenuItem = new JMenuItem("Exit");
-    @Getter private final JMenuItem editConfigMenuItem = new JMenuItem("Edit modpack.json...");
-    @Getter private final JMenuItem openFolderMenuItem = new JMenuItem("Open Directory");
-    @Getter private final JMenuItem checkProblemsMenuItem = new JMenuItem("Scan for Problems...");
-    @Getter private final JMenuItem testMenuItem = new JMenuItem("Test");
-    @Getter private final JMenuItem testOnlineMenuItem = new JMenuItem("Test Online");
-    @Getter private final JMenuItem optionsMenuItem = new JMenuItem("Test Launcher Options...");
-    @Getter private final JMenuItem clearInstanceMenuItem = new JMenuItem("Delete Test Launcher Instances");
-    @Getter private final JMenuItem clearWebRootMenuItem = new JMenuItem("Empty Test Web Server");
-    @Getter private final JMenuItem buildMenuItem = new JMenuItem("Build Pack...");
-    @Getter private final JMenuItem deployServerMenuItem = new JMenuItem("Deploy Server...");
-    @Getter private final JMenuItem generatePackagesMenuItem = new JMenuItem("Generate packages.json...");
-    @Getter private final JMenuItem openOutputFolderMenuItem = new JMenuItem("Open Upload Folder");
-    @Getter private final JMenuItem versionCheckMenuItem = new JMenuItem("Check for Mod Updates");
-    @Getter private final JMenuItem openWorkspaceFolderMenuItem = new JMenuItem("Open Workspace Folder");
-    @Getter private final JMenuItem openLauncherFolderMenuItem = new JMenuItem("Open Test Launcher Folder");
-    @Getter private final JMenuItem openWebRootMenuItem = new JMenuItem("Open Test Web Server Folder");
-    @Getter private final JMenuItem openConsoleMenuItem = new JMenuItem("Open Console");
-    @Getter private final JMenuItem docsMenuItem = new JMenuItem("Documentation");
-    @Getter private final JMenuItem aboutMenuItem = new JMenuItem("About");
+    @Getter private final JMenuItem newPackMenuItem = new JMenuItem("\uc0c8 \ud328\ud0a4\uc9c0 \ub9cc\ub4e4\uae30...");
+    @Getter private final JMenuItem newPackAtLocationMenuItem = new JMenuItem("\ub2e4\ub978 \uc704\uce58\ub85c \uc0c8 \ud328\ud0a4\uc9c0 \ub9cc\ub4e4\uae30...");
+    @Getter private final JMenuItem importPackMenuItem = new JMenuItem("\uae30\uc874 \ud328\ud0a4\uc9c0 \ucd94\uac00\ud558\uae30...");
+    @Getter private final JMenuItem changePackLocationMenuItem = new JMenuItem("\ud328\ud0a4\uc9c0 \uc704\uce58 \ubcc0\uacbd...");
+    @Getter private final JMenuItem refreshMenuItem = new JMenuItem("\uc791\uc5c5 \uacf5\uac04 \ub2e4\uc2dc \ubd88\ub7ec\uc624\uae30");
+    @Getter private final JMenuItem removePackItem = new JMenuItem("\ud328\ud0a4\uc9c0 \uc81c\uac70...");
+    @Getter private final JMenuItem deletePackItem = new JMenuItem("\ud328\ud0a4\uc9c0 \uc601\uad6c \uc0ad\uc81c...");
+    @Getter private final JMenuItem quitMenuItem = new JMenuItem("\uc885\ub8cc");
+    @Getter private final JMenuItem editConfigMenuItem = new JMenuItem("modpack.json \ud3b8\uc9d1...");
+    @Getter private final JMenuItem openFolderMenuItem = new JMenuItem("\ub514\ub809\ud1a0\ub9ac \uc5f4\uae30");
+    @Getter private final JMenuItem checkProblemsMenuItem = new JMenuItem("\ubb38\uc81c \uac80\uc0c9...");
+    @Getter private final JMenuItem testMenuItem = new JMenuItem("\ud14c\uc2a4\ud2b8");
+    @Getter private final JMenuItem testOnlineMenuItem = new JMenuItem("\uc628\ub77c\uc778\uc73c\ub85c \ud14c\uc2a4\ud2b8");
+    @Getter private final JMenuItem optionsMenuItem = new JMenuItem("\ud14c\uc2a4\ud2b8 \ub7f0\ucc98 \uc124\uc815...");
+    @Getter private final JMenuItem clearInstanceMenuItem = new JMenuItem("\ud14c\uc2a4\ud2b8 \ub7f0\ucc98 \uc778\uc2a4\ud134\uc2a4 \uc0ad\uc81c");
+    @Getter private final JMenuItem clearWebRootMenuItem = new JMenuItem("\ube48 \ud14c\uc2a4\ud2b8 \uc6f9 \uc11c\ubc84");
+    @Getter private final JMenuItem buildMenuItem = new JMenuItem("\ud328\ud0a4\uc9c0 \ube4c\ub4dc...");
+    @Getter private final JMenuItem deployServerMenuItem = new JMenuItem("\uc11c\ubc84 \ubc30\ud3ec...");
+    @Getter private final JMenuItem generatePackagesMenuItem = new JMenuItem("packages.json \uc0dd\uc131...");
+    @Getter private final JMenuItem openOutputFolderMenuItem = new JMenuItem("\uc5c5\ub85c\ub4dc \ud3f4\ub354 \uc5f4\uae30");
+    @Getter private final JMenuItem versionCheckMenuItem = new JMenuItem("\ubaa8\ub4dc \uc5c5\ub370\uc774\ud2b8 \ud655\uc778");
+    @Getter private final JMenuItem openWorkspaceFolderMenuItem = new JMenuItem("\uc791\uc5c5 \uacf5\uac04 \ud3f4\ub354 \uc5f4\uae30");
+    @Getter private final JMenuItem openLauncherFolderMenuItem = new JMenuItem("\ud14c\uc2a4\ud2b8 \ub7f0\ucc98 \ud3f4\ub354 \uc5f4\uae30");
+    @Getter private final JMenuItem openWebRootMenuItem = new JMenuItem("\ud14c\uc2a4\ud2b8 \uc6f9 \uc11c\ubc84 \ud3f4\ub354 \uc5f4\uae30");
+    @Getter private final JMenuItem openConsoleMenuItem = new JMenuItem("\ucf58\uc194 \ucc3d \uc5f4\uae30");
+    @Getter private final JMenuItem docsMenuItem = new JMenuItem("\ub3c4\uc6c0\ub9d0");
+    @Getter private final JMenuItem aboutMenuItem = new JMenuItem("\uc815\ubcf4");
 
     @Getter private final JTable packTable = new DefaultTable();
 
     public PackManagerFrame() {
-        super("Modpack Creator");
+        super("\ubaa8\ub4dc\ud329 \ud3b8\uc9d1\uae30");
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         initComponents();
@@ -92,7 +92,7 @@ public class PackManagerFrame extends JFrame {
     }
 
     private JToolBar createToolbar() {
-        JToolBar toolBar = new JToolBar("Toolbar");
+        JToolBar toolBar = new JToolBar("\ub3c4\uad6c \uc0c1\uc790");
 
         toolBar.setFloatable(false);
 
@@ -130,7 +130,7 @@ public class PackManagerFrame extends JFrame {
 
         Insets menuInset = new Insets(2, 2, 2, 2);
 
-        menu = new JMenu("File");
+        menu = new JMenu("\ud30c\uc77c(F)");
         menu.setMargin(menuInset);
         menu.setMnemonic('f');
         menuBar.add(menu);
@@ -146,7 +146,7 @@ public class PackManagerFrame extends JFrame {
         menu.addSeparator();
         menu.add(quitMenuItem);
 
-        menu = new JMenu("Edit");
+        menu = new JMenu("\ud3b8\uc9d1(E)");
         menu.setMargin(menuInset);
         menu.setMnemonic('e');
         menuBar.add(menu);
@@ -155,9 +155,9 @@ public class PackManagerFrame extends JFrame {
         menu.addSeparator();
         menu.add(checkProblemsMenuItem);
 
-        menu = new JMenu("Test");
+        menu = new JMenu("\ud14c\uc2a4\ud2b8(S)");
         menu.setMargin(menuInset);
-        menu.setMnemonic('t');
+        menu.setMnemonic('s');
         menuBar.add(menu);
         menu.add(testMenuItem);
         menu.add(testOnlineMenuItem);
@@ -167,7 +167,7 @@ public class PackManagerFrame extends JFrame {
         menu.add(clearInstanceMenuItem);
         menu.add(clearWebRootMenuItem);
 
-        menu = new JMenu("Build");
+        menu = new JMenu("\ube4c\ub4dc(B)");
         menu.setMargin(menuInset);
         menu.setMnemonic('b');
         menuBar.add(menu);
@@ -178,7 +178,7 @@ public class PackManagerFrame extends JFrame {
         menu.addSeparator();
         menu.add(openOutputFolderMenuItem);
 
-        menu = new JMenu("Tools");
+        menu = new JMenu("\ub3c4\uad6c(T)");
         menu.setMargin(menuInset);
         menu.setMnemonic('t');
         menuBar.add(menu);
@@ -190,7 +190,7 @@ public class PackManagerFrame extends JFrame {
         menu.addSeparator();
         menu.add(openConsoleMenuItem);
 
-        menu = new JMenu("Help");
+        menu = new JMenu("\ub3c4\uc6c0\ub9d0(H)");
         menu.setMargin(menuInset);
         menu.setMnemonic('h');
         menuBar.add(menu);

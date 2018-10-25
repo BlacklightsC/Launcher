@@ -19,15 +19,15 @@ import java.awt.event.KeyEvent;
 
 public class WelcomeDialog extends JFrame {
 
-    @Getter private final JButton newButton = new JButton("New Workspace...", SwingHelper.createIcon(Creator.class, "new.png"));
-    @Getter private final JButton openButton = new JButton("Open Workspace...", SwingHelper.createIcon(Creator.class, "open_folder.png"));
-    @Getter private final JButton helpButton = new JButton("Help");
-    @Getter private final JButton aboutButton = new JButton("About");
-    @Getter private final JButton quitButton = new JButton("Quit");
+    @Getter private final JButton newButton = new JButton("\uc0c8 \uc791\uc5c5 \uacf5\uac04...", SwingHelper.createIcon(Creator.class, "new.png"));
+    @Getter private final JButton openButton = new JButton("\uc791\uc5c5 \uacf5\uac04 \uc5f4\uae30...", SwingHelper.createIcon(Creator.class, "open_folder.png"));
+    @Getter private final JButton helpButton = new JButton("\ub3c4\uc6c0\ub9d0");
+    @Getter private final JButton aboutButton = new JButton("\uc815\ubcf4");
+    @Getter private final JButton quitButton = new JButton("\uc885\ub8cc");
     @Getter private final JList<RecentEntry> recentList = new JList<>();
 
     public WelcomeDialog() {
-        super("Modpack Creator");
+        super("\ubaa8\ub4dc\ud329 \ud3b8\uc9d1\uae30");
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         initComponents();

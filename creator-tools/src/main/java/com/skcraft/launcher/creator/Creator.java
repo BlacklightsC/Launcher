@@ -74,13 +74,13 @@ public class Creator {
         final Creator creator = new Creator();
 
         SwingUtilities.invokeAndWait(() -> {
-            SwingHelper.setSwingProperties("Modpack Creator");
+            SwingHelper.setSwingProperties("\ubaa8\ub4dc\ud329 \ud3b8\uc9d1\uae30");
             SwingHelper.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
             try {
                 creator.showWelcome();
             } catch (Exception e) {
-                SwingHelper.showErrorDialog(null, "Failed to start the modpack creator program.", "Start Error", e);
+                SwingHelper.showErrorDialog(null, "\ubaa8\ub4dc\ud329 \ud3b8\uc9d1\uae30\ub97c \uc2dc\uc791\ud558\ub294\ub370 \uc2e4\ud328\ud558\uc600\uc2b5\ub2c8\ub2e4.", "\uc2e4\ud589 \uc624\ub958", e);
             }
         });
     }

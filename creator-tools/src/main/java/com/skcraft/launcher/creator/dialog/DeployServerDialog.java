@@ -20,12 +20,12 @@ import java.io.File;
 public class DeployServerDialog extends JDialog {
 
     private final DirectoryField destDirField = new DirectoryField();
-    private final JCheckBox cleanModsCheck = new JCheckBox("Delete \"mods/\" folder before deploying");
+    private final JCheckBox cleanModsCheck = new JCheckBox("\ubc30\ud3ec\ud558\uae30 \uc804\uc5d0 \"mods/\" \ud3f4\ub354 \uc0ad\uc81c");
     @Getter
     private DeployOptions options;
 
     public DeployServerDialog(Window parent) {
-        super(parent, "Deploy Server Files", ModalityType.DOCUMENT_MODAL);
+        super(parent, "\uc11c\ubc84 \ud30c\uc77c \ubc30\ud3ec", ModalityType.DOCUMENT_MODAL);
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         initComponents();
@@ -40,13 +40,13 @@ public class DeployServerDialog extends JDialog {
         JPanel container = new JPanel();
         container.setLayout(new MigLayout("insets dialog"));
 
-        container.add(new JLabel("Output Directory:"));
+        container.add(new JLabel("\ucd9c\ub825 \ub514\ub809\ud1a0\ub9ac:"));
         container.add(destDirField, "span");
 
         container.add(cleanModsCheck, "span, gapbottom unrel");
 
-        JButton buildButton = new JButton("Deploy");
-        JButton cancelButton = new JButton("Cancel");
+        JButton buildButton = new JButton("\ubc30\ud3ec");
+        JButton cancelButton = new JButton("\ucde8\uc18c");
 
         container.add(buildButton, "tag ok, span, split 2, sizegroup bttn");
         container.add(cancelButton, "tag cancel, sizegroup bttn");
@@ -64,14 +64,14 @@ public class DeployServerDialog extends JDialog {
         String dir = destDirField.getPath();
 
         if (dir.isEmpty()) {
-            SwingHelper.showErrorDialog(this, "A directory must be entered.", "Error");
+            SwingHelper.showErrorDialog(this, "\ub514\ub809\ud1a0\ub9ac\ub97c \uc785\ub825\ud574\uc57c \ud569\ub2c8\ub2e4.", "\uc624\ub958");
             return;
         }
 
         File dirFile = new File(dir);
 
         if (!dirFile.isDirectory()) {
-            SwingHelper.showErrorDialog(this, "The selected path is not a directory that exists.", "Error");
+            SwingHelper.showErrorDialog(this, "\uc120\ud0dd\ub41c \ub514\ub809\ud1a0\ub9ac\uac00 \uc874\uc7ac\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.", "\uc624\ub958");
             return;
         }
 

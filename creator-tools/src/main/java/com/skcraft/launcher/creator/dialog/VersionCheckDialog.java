@@ -22,12 +22,12 @@ public class VersionCheckDialog extends JDialog {
 
     @Getter private final JTable knownModsTable = new DefaultTable();
     @Getter private final JTable unknownModsTable = new DefaultTable();
-    @Getter private final JButton closeButton = new JButton("Close");
+    @Getter private final JButton closeButton = new JButton("\ub2eb\uae30");
     private final TableColumnAdjuster updateTableAdjuster = new TableColumnAdjuster(knownModsTable);
     private final TableColumnAdjuster unknownTableAdjuster = new TableColumnAdjuster(unknownModsTable);
 
     public VersionCheckDialog(Window parent) {
-        super(parent, "Update Check", ModalityType.DOCUMENT_MODAL);
+        super(parent, "\uc5c5\ub370\uc774\ud2b8 \ud655\uc778", ModalityType.DOCUMENT_MODAL);
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         initComponents();
@@ -51,13 +51,13 @@ public class VersionCheckDialog extends JDialog {
         JPanel container = new JPanel();
         container.setLayout(new MigLayout("insets dialog, fill"));
 
-        container.add(new JLabel("With Potential Updates:"), "span");
+        container.add(new JLabel("\uc7a0\uc7ac\uc801\uc778 \uc5c5\ub370\uc774\ud2b8:"), "span");
         container.add(SwingHelper.wrapScrollPane(knownModsTable), "grow, pushy, span, w 500:900, h 230");
 
-        container.add(new JLabel("Unknown Status:"), "span");
+        container.add(new JLabel("\uc54c \uc218\uc5c6\ub294 \uc0c1\ud0dc:"), "span");
         container.add(SwingHelper.wrapScrollPane(unknownModsTable), "grow, pushy, span, w 500:900, h 150, gapbottom unrel, wrap");
 
-        container.add(new JLabel("Version data is sourced from NotEnoughMods.com."), "");
+        container.add(new JLabel("\ubc84\uc804 \ub370\uc774\ud130\ub294 NotEnoughMods.com\uc5d0\uc11c \uc81c\uacf5\ud569\ub2c8\ub2e4."), "");
         container.add(closeButton, "tag cancel, sizegroup bttn");
 
         add(container, BorderLayout.CENTER);

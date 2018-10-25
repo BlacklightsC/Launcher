@@ -48,9 +48,9 @@ public class PackLoader implements ProgressObservable, Function<Workspace, List<
     public String getStatus() {
         Pack pack = lastPack;
         if (pack != null) {
-            return "Loading " + pack.getDirectory().getName() + "...";
+            return pack.getDirectory().getName() + " \ubd88\ub7ec\uc624\ub294 \uc911...";
         } else {
-            return "Enumerating packs...";
+            return "\ud328\ud0a4\uc9c0 \uc5f4\uac70\ud558\ub294 \uc911...";
         }
     }
 
