@@ -41,7 +41,7 @@ public class ServerCopyExport extends DirectoryWalker {
     protected void onFile(File file, String relPath) throws IOException {
         File dest = new File(destDir, relPath);
 
-        log.info("Copying " + file.getAbsolutePath() + " to " + dest.getAbsolutePath());
+        log.info(file.getAbsolutePath() + " (\uc744)\ub97c " + dest.getAbsolutePath() + " (\uc73c)\ub85c \ubcf5\uc0ac \uc911\uc785\ub2c8\ub2e4.");
         dest.getParentFile().mkdirs();
         Files.copy(file, dest);
     }
