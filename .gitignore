@@ -156,3 +156,8 @@ $RECYCLE.BIN/
 /versions
 /accounts.dat
 /config.json
+
+# Additional Files
+/Workspace
+/launch4j
+/sample-files
