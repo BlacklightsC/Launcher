@@ -34,13 +34,13 @@ public class PackTableModel extends AbstractTableModel {
             case 0:
                 return "";
             case 1:
-                return "Name";
+                return "\uc774\ub984";
             case 2:
-                return "Title";
+                return "\ud45c\uc81c";
             case 3:
-                return "Game Version";
+                return "\uac8c\uc784 \ubc84\uc804";
             case 4:
-                return "Location";
+                return "\uc704\uce58";
             default:
                 return null;
         }
@@ -85,7 +85,7 @@ public class PackTableModel extends AbstractTableModel {
             case 0:
                 return config != null ? instanceIcon : warningIcon;
             case 1:
-                return config != null ? config.getName() : "<Moved or Deleted>";
+                return config != null ? config.getName() : "<\uc774\ub3d9\ub418\uac70\ub098 \uc0ad\uc81c\ub428>";
             case 2:
                 return config != null ? config.getTitle() : "?";
             case 3:

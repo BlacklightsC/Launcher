@@ -37,7 +37,7 @@ public class DirectoryWalker implements Callable<List<File>> {
     @Override
     public List<File> call() throws IOException {
         if (!dir.isDirectory()) {
-            throw new IllegalArgumentException(dir.getAbsolutePath() + " is not a directory");
+            throw new IllegalArgumentException(dir.getAbsolutePath() + " \ub294 \ub514\ub809\ud1a0\ub9ac\uac00 \uc544\ub2d9\ub2c8\ub2e4.");
         }
 
         List<File> matched = Lists.newArrayList();

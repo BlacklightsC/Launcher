@@ -65,7 +65,7 @@ public class WelcomeController {
             return controller;
         }), executor)
                 .handleAsync(PackManagerController::show, ex -> {}, SwingExecutor.INSTANCE);
-        ProgressDialog.showProgress(frame, deferred, new SettableProgress("Loading...", -1), "Loading workspace...", "Loading workspace...");
+        ProgressDialog.showProgress(frame, deferred, new SettableProgress("\ubd88\ub7ec\uc624\ub294 \uc911...", -1), "\uc791\uc5c5 \uacf5\uac04\uc744 \ubd88\ub7ec\uc624\ub294 \uc911...", "\uc791\uc5c5 \uacf5\uac04\uc744 \ubd88\ub7ec\uc624\ub294 \uc911...");
         SwingHelper.addErrorDialogCallback(frame, deferred);
 
         return true;
@@ -112,7 +112,7 @@ public class WelcomeController {
 
     private Optional<File> getWorkspaceDir() {
         JFileChooser chooser = new JFileChooser();
-        chooser.setDialogTitle("Select Workspace Directory");
+        chooser.setDialogTitle("\uc791\uc5c5 \uacf5\uac04 \ub514\ub809\ud1a0\ub9ac\ub97c \uc120\ud0dd\ud558\uc138\uc694");
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         chooser.setFileFilter(new WorkspaceDirectoryFilter());
 
@@ -165,7 +165,7 @@ public class WelcomeController {
             Optional<File> optional = getWorkspaceDir();
             if (optional.isPresent()) {
                 File workspaceFile = Workspace.getWorkspaceFile(optional.get());
-                if (!workspaceFile.exists() || SwingHelper.confirmDialog(dialog, "There is already a workspace there. Do you want to load it?", "Existing")) {
+                if (!workspaceFile.exists() || SwingHelper.confirmDialog(dialog, "\uc774\ubbf8 \uc791\uc5c5 \uacf5\uac04\uc774 \uc788\uc2b5\ub2c8\ub2e4. \ubd88\ub7ec\uc624\uc2dc\uaca0\uc2b5\ub2c8\uae4c?", "\uc774\ubbf8 \uc874\uc7ac\ud568")) {
                     if (openWorkspace(optional.get())) {
                         dialog.dispose();
                     }
@@ -177,7 +177,7 @@ public class WelcomeController {
             Optional<File> optional = getWorkspaceDir();
             if (optional.isPresent()) {
                 File workspaceFile = Workspace.getWorkspaceFile(optional.get());
-                if (workspaceFile.exists() || SwingHelper.confirmDialog(dialog, "Do you want to create a new workspace there?", "Create New")) {
+                if (workspaceFile.exists() || SwingHelper.confirmDialog(dialog, "\uc0c8 \uc791\uc5c5 \uc601\uc5ed\uc744 \uc0dd\uc131 \ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?", "\uc0c8\ub85c \ub9cc\ub4e4\uae30")) {
                     if (openWorkspace(optional.get())) {
                         dialog.dispose();
                     }
@@ -202,7 +202,7 @@ public class WelcomeController {
         JPopupMenu popup = new JPopupMenu();
         JMenuItem menuItem;
 
-        menuItem = new JMenuItem("Remove");
+        menuItem = new JMenuItem("\uc81c\uac70");
         menuItem.addActionListener(e -> removeRecentEntry(entry));
         popup.add(menuItem);
 

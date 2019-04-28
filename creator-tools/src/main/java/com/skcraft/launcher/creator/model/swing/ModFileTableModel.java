@@ -35,12 +35,12 @@ public class ModFileTableModel extends AbstractTableModel {
     public String getColumnName(int columnIndex) {
         switch (columnIndex) {
             case 0: return "";
-            case 1: return "Mod";
-            case 2: return "Version";
-            case 3: return "Latest Release";
-            case 4: return "Latest Dev";
-            case 5: return "Mod ID";
-            case 6: return "Filename";
+            case 1: return "\ubaa8\ub4dc";
+            case 2: return "\ubc84\uc804";
+            case 3: return "\ucd5c\uc2e0 \ub9b4\ub9ac\uc988";
+            case 4: return "\ucd5c\uc2e0 \uac1c\ubc1c";
+            case 5: return "\ubaa8\ub4dc ID";
+            case 6: return "\ud30c\uc77c\uba85";
             default: return null;
         }
     }

@@ -27,15 +27,15 @@ public class ManifestEntryTableModel extends AbstractTableModel {
             case 0:
                 return "";
             case 1:
-                return "Modpack";
+                return "\ubaa8\ub4dc\ud329";
             case 2:
-                return "Version";
+                return "\ubc84\uc804";
             case 3:
-                return "Priority";
+                return "\uc6b0\uc120 \uc21c\uc704";
             case 4:
-                return "Location";
+                return "\uc704\uce58";
             case 5:
-                return "Game Keys";
+                return "\uac8c\uc784 \ud0a4";
             default:
                 return null;
         }

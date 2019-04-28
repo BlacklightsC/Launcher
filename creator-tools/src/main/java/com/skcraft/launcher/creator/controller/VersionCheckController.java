@@ -54,18 +54,18 @@ public class VersionCheckController {
         ModInfoReader binaryInspector = new ModInfoReader();
         NemModList nemModList = new NemModList();
 
-        SettableProgress progress = new SettableProgress("Retrieving mod information...", -1);
+        SettableProgress progress = new SettableProgress("\ubaa8\ub4dc \uc815\ubcf4 \uac80\uc0c9 \uc911...", -1);
 
         Deferred<?> deferred = Deferreds.makeDeferred(executor.submit(walker), executor)
-                .thenTap(() -> progress.set("Querying NotEnoughMods for version data...", -1))
+                .thenTap(() -> progress.set("NotEnoughMods\uc5d0\uc11c \ubc84\uc804 \ub370\uc774\ud130 \uac80\uc0c9 \uc911...", -1))
                 .thenTap(() -> {
                     try {
                         nemModList.load(gameVersion);
                     } catch (IOException | InterruptedException e) {
-                        throw new RuntimeException("Failed to retrieve mod information from NotEnoughMods. Perhaps NEM doesn't support your pack's MC version.", e);
+                        throw new RuntimeException("NotEnoughMods\uc5d0\uc11c \ubaa8\ub4dc \uc815\ubcf4\ub97c \uac80\uc0c9\ud558\ub294 \ub370 \uc2e4\ud328\ud588\uc2b5\ub2c8\ub2e4. Minecraft \ubc84\uc804\uc744 \uc9c0\uc6d0\ud558\uc9c0 \uc54a\ub294 \uac83 \uac19\uc2b5\ub2c8\ub2e4.", e);
                     }
                 })
-                .thenTap(() -> progress.set("Scanning mod files for manifests...", -1))
+                .thenTap(() -> progress.set("\ub9e4\ub2c8\ud398\uc2a4\ud2b8\uc5d0 \ub300\ud55c \ubaa8\ub4dc \ud30c\uc77c \uc2a4\uce94 \uc911...", -1))
                 .thenApply(files -> {
                     List<ModFile> mods = Lists.newArrayList();
 
@@ -125,7 +125,7 @@ public class VersionCheckController {
                 }, ex -> {
                 }, SwingExecutor.INSTANCE);
 
-        ProgressDialog.showProgress(parentWindow, deferred, progress, "Checking for mod updates...", "Checking for mod updates...");
+        ProgressDialog.showProgress(parentWindow, deferred, progress, "\ubaa8\ub4dc \uc5c5\ub370\uc774\ud2b8 \ud655\uc778 \uc911...", "\ubaa8\ub4dc \uc5c5\ub370\uc774\ud2b8 \ud655\uc778 \uc911...");
         SwingHelper.addErrorDialogCallback(parentWindow, deferred);
     }
 

@@ -49,7 +49,7 @@ public class PackBuilder implements Callable<PackBuilder>, ProgressObservable {
             }
 
             if (failures.size() > 0) {
-                throw new LauncherException(failures.size() + " failed to delete", "There were " + failures.size() + " failures during cleaning.");
+                throw new LauncherException(failures.size() + " \ud68c\uc758 \uc0ad\uc81c \uc2e4\ud328", "\uc815\ub9ac \ub3c4\uc911\uc5d0 " + failures.size() + " \ubc88\uc758 \uc0ad\uc81c \uc2e4\ud328\uac00 \uc788\uc5c8\uc2b5\ub2c8\ub2e4.");
             }
         }
 
@@ -75,6 +75,6 @@ public class PackBuilder implements Callable<PackBuilder>, ProgressObservable {
 
     @Override
     public String getStatus() {
-        return "Building modpack...";
+        return "\ubaa8\ub4dc\ud329 \ube4c\ub4dc \uc911...";
     }
 }

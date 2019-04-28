@@ -27,7 +27,7 @@ public class FeaturePatternDialog extends JDialog {
     private final JTextField nameText = new JTextField(20);
     private final JTextArea descArea = new JTextArea(3, 40);
     private final JComboBox recommendationCombo = new JComboBox(new RecommendationComboBoxModel());
-    private final JCheckBox selectedCheck = new JCheckBox("Selected by default");
+    private final JCheckBox selectedCheck = new JCheckBox("\uae30\ubcf8\uac12\uc744 \uc0ac\uc6a9\ud568\uc73c\ub85c \uc124\uc815");
     private final JTextArea includeArea = new JTextArea(8, 40);
     private final JTextArea excludeArea = new JTextArea(3, 40);
 
@@ -35,7 +35,7 @@ public class FeaturePatternDialog extends JDialog {
     private boolean saved = false;
 
     public FeaturePatternDialog(Window parent, FeaturePattern pattern) {
-        super(parent, "Configure Feature", ModalityType.DOCUMENT_MODAL);
+        super(parent, "\uae30\ub2a5 \uc124\uc815", ModalityType.DOCUMENT_MODAL);
 
         this.pattern = pattern;
 
@@ -61,25 +61,25 @@ public class FeaturePatternDialog extends JDialog {
         JPanel container = new JPanel();
         container.setLayout(new MigLayout("insets dialog"));
 
-        container.add(new JLabel("Feature Name:"));
+        container.add(new JLabel("\uae30\ub2a5 \uc774\ub984:"));
         container.add(nameText, "span");
 
-        container.add(new JLabel("Recommendation:"));
+        container.add(new JLabel("\ucd94\ucc9c\ub3c4:"));
         container.add(recommendationCombo, "span");
 
         container.add(selectedCheck, "span");
 
-        container.add(new JLabel("Description:"), "wrap");
+        container.add(new JLabel("\uc124\uba85:"), "wrap");
         container.add(SwingHelper.wrapScrollPane(descArea), "span");
 
-        container.add(new JLabel("Include Patterns:"), "wrap");
+        container.add(new JLabel("\ud3ec\ud568 \ud56d\ubaa9:"), "wrap");
         container.add(SwingHelper.wrapScrollPane(includeArea), "span");
 
-        container.add(new JLabel("Exclude Patterns:"), "wrap");
+        container.add(new JLabel("\uc81c\uc678 \ud56d\ubaa9:"), "wrap");
         container.add(SwingHelper.wrapScrollPane(excludeArea), "span, gapbottom unrel");
 
-        JButton okButton = new JButton("OK");
-        JButton cancelButton = new JButton("Cancel");
+        JButton okButton = new JButton("\ud655\uc778");
+        JButton cancelButton = new JButton("\ucde8\uc18c");
 
         container.add(okButton, "tag ok, span, split 2, sizegroup bttn");
         container.add(cancelButton, "tag cancel, sizegroup bttn");
@@ -91,17 +91,17 @@ public class FeaturePatternDialog extends JDialog {
 
         okButton.addActionListener(e -> {
             if (nameText.getText().trim().isEmpty()) {
-                SwingHelper.showErrorDialog(FeaturePatternDialog.this, "The 'Feature Name' field cannot be empty.", "Input Error");
+                SwingHelper.showErrorDialog(FeaturePatternDialog.this, "'\uae30\ub2a5 \uc774\ub984' \ub780\uc740 \ube44\uc6cc\ub458 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.", "\uc785\ub825 \uc624\ub958");
                 return;
             }
 
             if (descArea.getText().trim().isEmpty()) {
-                SwingHelper.showErrorDialog(FeaturePatternDialog.this, "The 'Description' field cannot be empty.", "Input Error");
+                SwingHelper.showErrorDialog(FeaturePatternDialog.this, "'\uc124\uba85' \ub780\uc740 \ube44\uc6cc\ub458 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.", "\uc785\ub825 \uc624\ub958");
                 return;
             }
 
             if (includeArea.getText().trim().isEmpty()) {
-                SwingHelper.showErrorDialog(FeaturePatternDialog.this, "The 'Include Patterns' field cannot be empty.", "Input Error");
+                SwingHelper.showErrorDialog(FeaturePatternDialog.this, "'\ud3ec\ud568 \ud56d\ubaa9' \ub780\uc740 \ube44\uc6cc\ub458 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.", "\uc785\ub825 \uc624\ub958");
                 return;
             }
 

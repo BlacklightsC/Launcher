@@ -34,7 +34,7 @@ public class ProblemTableModel extends AbstractTableModel {
             case 0:
                 return "";
             case 1:
-                return "Problem";
+                return "\ubb38\uc81c\uc810";
             default:
                 return null;
         }

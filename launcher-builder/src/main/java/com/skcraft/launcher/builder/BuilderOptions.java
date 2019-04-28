@@ -101,13 +101,13 @@ public class BuilderOptions {
 
     private void requireOutputPath(String name) throws ParameterException {
         if (outputPath == null) {
-            throw new ParameterException("Because " + name + " was not specified, --output needs to be specified as the output directory and then " + name + " will be default to a pre-set path within the output directory");
+            throw new ParameterException(name + "(\uc774)\uac00 \uc9c0\uc815\ub418\uc9c0 \uc54a\uc558\uc73c\ubbc0\ub85c \uae30\ubcf8 \uacbd\ub85c\uac00 \uc0ac\uc6a9\ub429\ub2c8\ub2e4. --output\uc744 \uc0ac\uc6a9\ud574\uc11c \ucd9c\ub825 \ub514\ub809\ud1a0\ub9ac\ub97c \uc9c0\uc815\ud558\uc138\uc694");
         }
     }
 
     private void requireInputPath(String name) throws ParameterException {
         if (inputPath == null) {
-            throw new ParameterException("Because " + name + " was not specified, --input needs to be specified as the project directory and then " + name + " will be default to a pre-set path within the project directory");
+            throw new ParameterException(name + "(\uc774)\uac00 \uc9c0\uc815\ub418\uc9c0 \uc54a\uc558\uc73c\ubbc0\ub85c \uae30\ubcf8 \uacbd\ub85c\uac00 \uc0ac\uc6a9\ub429\ub2c8\ub2e4. --input\uc744 \uc0ac\uc6a9\ud574\uc11c \ud504\ub85c\uc81d\ud2b8 \ub514\ub809\ud1a0\ub9ac\ub97c \uc9c0\uc815\ud558\uc138\uc694");
         }
     }
 

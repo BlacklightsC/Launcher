@@ -19,13 +19,13 @@ import java.util.List;
 
 public class ProblemViewer extends JDialog {
 
-    private static final String DEFAULT_EXPLANATION = "Select a problem on the left to see the explanation here.";
+    private static final String DEFAULT_EXPLANATION = "\uc67c\ucabd\uc758 \ubb38\uc81c\ub418\ub294 \ud56d\ubaa9\uc744 \uc120\ud0dd\ud558\uba74 \uc5ec\uae30\uc11c \uc124\uba85\uc744 \ubcfc \uc218 \uc788\uc2b5\ub2c8\ub2e4.";
     private final ProblemTable problemTable = new ProblemTable();
     private final ProblemTableModel problemTableModel;
     private final JTextArea explanationText = new JTextArea(DEFAULT_EXPLANATION);
 
     public ProblemViewer(Window parent, List<Problem> problems) {
-        super(parent, "Potential Problems", ModalityType.DOCUMENT_MODAL);
+        super(parent, "\uc7a0\uc7ac\uc801\uc778 \ubb38\uc81c", ModalityType.DOCUMENT_MODAL);
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         initComponents();
@@ -56,7 +56,7 @@ public class ProblemViewer extends JDialog {
 
         container.add(splitPane, "grow, w 220:500, h 240, wrap");
 
-        JButton closeButton = new JButton("Close");
+        JButton closeButton = new JButton("\ub2eb\uae30");
         container.add(closeButton, "tag cancel, gaptop unrel");
 
         add(container, BorderLayout.CENTER);

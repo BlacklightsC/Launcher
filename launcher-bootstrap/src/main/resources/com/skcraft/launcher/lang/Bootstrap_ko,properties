@@ -1,0 +1,21 @@
+#
+# SK's Minecraft Launcher
+# Copyright (C) 2010-2014 Albert Pham <http://www.sk89q.com> and contributors
+# Please see LICENSE.txt for license information.
+#
+
+button.cancal=\ucde8\uc18c
+
+errorTitle=\uc624\ub958
+errors.failedDownloadError=Minecraft of Liberty \ub7f0\ucc98\ub97c \ub2e4\uc6b4\ub85c\ub4dc \ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.
+errors.bootstrapError=\ub7f0\ucc98\ub97c \uc2e4\ud589\ud558\ub294 \ub3c4\uc911\uc5d0 \uc624\ub958\uac00 \ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4!
+
+errorDialog.reportError=To report this error, provide\:
+
+downloader.title=Minecraft of Liberty \ub7f0\ucc98 \ub2e4\uc6b4\ub85c\ub4dc \uc911...
+downloader.pleaseWait=\uc7a0\uc2dc\ub9cc \uae30\ub2e4\ub824\uc8fc\uc138\uc694...
+downloader.status=\ucd5c\uc2e0 Minecraft of Liberty \ub7f0\ucc98 \ub2e4\uc6b4\ub85c\ub4dc \uc911...
+downloader.progressStatus=\ucd5c\uc2e0 Minecraft of Liberty \ub7f0\ucc98 \ub2e4\uc6b4\ub85c\ub4dc \uc911 (%.2f%%)...
+
+progress.confirmCancel=\ucde8\uc18c \ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?
+progress.confirmCancelTitle=\ucde8\uc18c

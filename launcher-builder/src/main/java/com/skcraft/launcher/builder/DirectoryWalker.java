@@ -52,7 +52,7 @@ public abstract class DirectoryWalker {
      */
     private void walk(@NonNull File dir, @NonNull String basePath) throws IOException {
         if (!dir.isDirectory()) {
-            throw new IllegalArgumentException(dir.getAbsolutePath() + " is not a directory");
+            throw new IllegalArgumentException(dir.getAbsolutePath() + "(\uc740)\ub294 \ub514\ub809\ud1a0\ub9ac\uac00 \uc544\ub2d9\ub2c8\ub2e4.");
         }
 
         File[] files = dir.listFiles();

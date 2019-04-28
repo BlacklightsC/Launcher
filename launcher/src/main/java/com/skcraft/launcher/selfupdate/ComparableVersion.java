@@ -85,7 +85,7 @@ public class ComparableVersion
                     return 1; // 1.1 > 1-1
 
                 default:
-                    throw new RuntimeException("invalid item: " + item.getClass());
+                    throw new RuntimeException("\uc720\ud6a8\ud558\uc9c0 \uc54a\uc740 \ud56d\ubaa9: " + item.getClass());
             }
         }
 
@@ -180,7 +180,7 @@ public class ComparableVersion
                     return -1; // 1.any < 1-1
 
                 default:
-                    throw new RuntimeException("invalid item: " + item.getClass());
+                    throw new RuntimeException("\uc720\ud6a8\ud558\uc9c0 \uc54a\uc740 \ud56d\ubaa9: " + item.getClass());
             }
         }
 
@@ -249,7 +249,7 @@ public class ComparableVersion
                     return 0;
 
                 default:
-                    throw new RuntimeException("invalid item: " + item.getClass());
+                    throw new RuntimeException("\uc720\ud6a8\ud558\uc9c0 \uc54a\uc740 \ud56d\ubaa9: " + item.getClass());
             }
         }
 

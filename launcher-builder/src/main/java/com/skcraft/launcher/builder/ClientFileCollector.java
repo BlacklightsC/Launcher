@@ -80,7 +80,7 @@ public class ClientFileCollector extends DirectoryWalker {
         entry.setSize(file.length());
         applicator.apply(entry);
         destPath.getParentFile().mkdirs();
-        ClientFileCollector.log.info(String.format("Adding %s from %s...", relPath, file.getAbsolutePath()));
+        ClientFileCollector.log.info(String.format("%s\uc5d0 %s \ucd94\uac00 \uc911 ...", file.getAbsolutePath(), relPath));
         if (copy) {
             Files.copy(file, destPath);
         }

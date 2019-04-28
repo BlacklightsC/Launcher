@@ -27,7 +27,7 @@ public class BuildDialog extends JDialog {
     private BuildOptions options;
 
     public BuildDialog(Window parent) {
-        super(parent, "Build Release", ModalityType.DOCUMENT_MODAL);
+        super(parent, "\ub9b4\ub9ac\uc988 \ube4c\ub4dc", ModalityType.DOCUMENT_MODAL);
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         initComponents();
@@ -43,17 +43,17 @@ public class BuildDialog extends JDialog {
         JPanel container = new JPanel();
         container.setLayout(new MigLayout("insets dialog"));
 
-        container.add(new JLabel("Version:"));
+        container.add(new JLabel("\ubc84\uc804:"));
         container.add(versionText, "span");
 
-        container.add(new JLabel("Manifest Filename:"));
+        container.add(new JLabel("\ub9e4\ub2c8\ud398\uc2a4\ud2b8 \ud30c\uc77c\uba85:"));
         container.add(manifestFilenameText, "span");
 
-        container.add(new JLabel("Output Directory:"));
+        container.add(new JLabel("\ucd9c\ub825 \ub514\ub809\ud1a0\ub9ac:"));
         container.add(destDirField, "span");
 
-        JButton buildButton = new JButton("Build");
-        JButton cancelButton = new JButton("Cancel");
+        JButton buildButton = new JButton("\ube4c\ub4dc");
+        JButton cancelButton = new JButton("\ucde8\uc18c");
 
         container.add(buildButton, "tag ok, span, split 2, sizegroup bttn");
         container.add(cancelButton, "tag cancel, sizegroup bttn");
@@ -72,17 +72,17 @@ public class BuildDialog extends JDialog {
         String manifestFilename = manifestFilenameText.getText().trim();
 
         if (version.isEmpty()) {
-            SwingHelper.showErrorDialog(this, "A version string must be entered.", "Error");
+            SwingHelper.showErrorDialog(this, "\ubc84\uc804\uc744 \uc785\ub825\ud574\uc57c \ud569\ub2c8\ub2e4.", "\uc624\ub958");
             return;
         }
 
         if (manifestFilename.isEmpty()) {
-            SwingHelper.showErrorDialog(this, "A manifest filename must be entered.", "Error");
+            SwingHelper.showErrorDialog(this, "\ub9e4\ub2c8\ud398\uc2a4\ud2b8 \ud30c\uc77c\uba85\uc744 \uc785\ub825\ud574\uc57c \ud569\ub2c8\ub2e4.", "\uc624\ub958");
             return;
         }
 
         if (destDirField.getPath().isEmpty()) {
-            SwingHelper.showErrorDialog(this, "A destination directory must be entered.", "Error");
+            SwingHelper.showErrorDialog(this, "\ucd9c\ub825 \ub514\ub809\ud1a0\ub9ac\ub97c \uc785\ub825\ud574\uc57c \ud569\ub2c8\ub2e4.", "\uc624\ub958");
             return;
         }
 

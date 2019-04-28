@@ -43,7 +43,7 @@ public class ServerDeploy implements Callable<ServerDeploy>, ProgressObservable 
             }
 
             if (failures.size() > 0) {
-                throw new LauncherException(failures.size() + " failed to delete", "There were " + failures.size() + " failures during cleaning.");
+                throw new LauncherException(failures.size() + " \ud68c\uc758 \uc0ad\uc81c \uc2e4\ud328", failures.size() + " \uac1c\uc758 \ud30c\uc77c\uc744 \uc0ad\uc81c\ud560 \uc218 \uc5c6\uc5c8\uc2b5\ub2c8\ub2e4.");
             }
         }
 
@@ -63,7 +63,7 @@ public class ServerDeploy implements Callable<ServerDeploy>, ProgressObservable 
 
     @Override
     public String getStatus() {
-        return "Deploying server files...";
+        return "\uc11c\ubc84 \ud30c\uc77c \ubc30\ud3ec \uc911...";
     }
 
 }

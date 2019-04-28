@@ -18,7 +18,7 @@ public class WorkspaceDirectoryFilter extends FileFilter {
 
     @Override
     public String getDescription() {
-        return "Directories";
+        return "\ub514\ub809\ud1a0\ub9ac";
     }
 
 }

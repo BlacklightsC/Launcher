@@ -37,7 +37,7 @@ public class BuilderConfigDialog extends JDialog {
     private boolean saved = false;
 
     public BuilderConfigDialog(Window parent, BuilderConfig config) {
-        super(parent, "Modpack Properties", ModalityType.DOCUMENT_MODAL);
+        super(parent, "\ubaa8\ub4dc\ud329 \ub4f1\ub85d \uc815\ubcf4", ModalityType.DOCUMENT_MODAL);
 
         this.config = config;
 
@@ -68,15 +68,15 @@ public class BuilderConfigDialog extends JDialog {
         JPanel container = new JPanel();
         container.setLayout(new MigLayout("fill, insets dialog"));
 
-        tabbedPane.addTab("Modpack", null, createMainPanel());
-        tabbedPane.addTab("Launch", null, createLaunchPanel());
-        tabbedPane.addTab("User Files", null, createUserFilesPanel());
-        tabbedPane.addTab("Optional Features", null, createFeaturesPanel());
+        tabbedPane.addTab("\ud328\ud0a4\uc9c0 \uc815\ubcf4", null, createMainPanel());
+        tabbedPane.addTab("\uc2e4\ud589 \uc124\uc815", null, createLaunchPanel());
+        tabbedPane.addTab("\uc0ac\uc6a9\uc790 \ud30c\uc77c", null, createUserFilesPanel());
+        tabbedPane.addTab("\uc120\ud0dd\uc801 \uae30\ub2a5", null, createFeaturesPanel());
 
         container.add(tabbedPane, "span, grow, gapbottom unrel");
 
-        JButton saveButton = new JButton("Save");
-        JButton cancelButton = new JButton("Cancel");
+        JButton saveButton = new JButton("\uc800\uc7a5");
+        JButton cancelButton = new JButton("\ucde8\uc18c");
 
         container.add(saveButton, "tag ok, span, split 2, sizegroup bttn");
         container.add(cancelButton, "tag cancel, sizegroup bttn");
@@ -88,12 +88,12 @@ public class BuilderConfigDialog extends JDialog {
 
         saveButton.addActionListener(e -> {
             if (nameText.getText().trim().isEmpty()) {
-                SwingHelper.showErrorDialog(BuilderConfigDialog.this, "The 'Name' field cannot be empty.", "Input Error");
+                SwingHelper.showErrorDialog(BuilderConfigDialog.this, "'\uc774\ub984' \ub780\uc740 \ube44\uc6cc\ub458 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.", "\uc785\ub825 \uc624\ub958");
                 return;
             }
 
             if (gameVersionText.getText().trim().isEmpty()) {
-                SwingHelper.showErrorDialog(BuilderConfigDialog.this, "The 'Game Version' field must be a Minecraft version.", "Input Error");
+                SwingHelper.showErrorDialog(BuilderConfigDialog.this, "'\uac8c\uc784 \ubc84\uc804' \ub780\uc740 Minecraft \ubc84\uc804\uc774\uc5ec\uc57c \ud569\ub2c8\ub2e4.", "\uc785\ub825 \uc624\ub958");
                 return;
             }
 
@@ -113,13 +113,13 @@ public class BuilderConfigDialog extends JDialog {
         SwingHelper.removeOpaqueness(container);
         container.setLayout(new MigLayout("insets dialog"));
 
-        container.add(new JLabel("Name:"));
+        container.add(new JLabel("\uc774\ub984:"));
         container.add(nameText, "span");
 
-        container.add(new JLabel("Title:"));
+        container.add(new JLabel("\ud45c\uc81c:"));
         container.add(titleText, "span");
 
-        container.add(new JLabel("Game Version:"));
+        container.add(new JLabel("\uac8c\uc784 \ubc84\uc804:"));
         container.add(gameVersionText, "span");
 
         return container;
@@ -130,7 +130,7 @@ public class BuilderConfigDialog extends JDialog {
         SwingHelper.removeOpaqueness(container);
         container.setLayout(new MigLayout("insets dialog"));
 
-        container.add(new JLabel("Launch Flags:"), "wrap");
+        container.add(new JLabel("\ucd94\uac00 \ub9e4\uac1c\ubcc0\uc218:"), "wrap");
         container.add(SwingHelper.wrapScrollPane(launchFlagsArea), "span");
 
         return container;
@@ -141,10 +141,10 @@ public class BuilderConfigDialog extends JDialog {
         SwingHelper.removeOpaqueness(container);
         container.setLayout(new MigLayout("insets dialog"));
 
-        container.add(new JLabel("Include Patterns:"), "wrap");
+        container.add(new JLabel("\ud3ec\ud568 \ud56d\ubaa9:"), "wrap");
         container.add(SwingHelper.wrapScrollPane(userFilesIncludeArea), "span, gapbottom unrel");
 
-        container.add(new JLabel("Exclude Patterns:"), "wrap");
+        container.add(new JLabel("\uc81c\uc678 \ud56d\ubaa9:"), "wrap");
         container.add(SwingHelper.wrapScrollPane(userFilesExcludeArea), "span");
 
         return container;
@@ -155,9 +155,9 @@ public class BuilderConfigDialog extends JDialog {
         SwingHelper.removeOpaqueness(container);
         container.setLayout(new MigLayout("fill, insets dialog"));
 
-        JButton newButton = new JButton("New...");
-        JButton editButton = new JButton("Edit...");
-        JButton deleteButton = new JButton("Delete...");
+        JButton newButton = new JButton("\ucd94\uac00...");
+        JButton editButton = new JButton("\ud3b8\uc9d1...");
+        JButton deleteButton = new JButton("\uc81c\uac70...");
 
         container.add(newButton, "span, split 3, sizegroup bttn");
         container.add(editButton, "sizegroup bttn");
@@ -179,7 +179,7 @@ public class BuilderConfigDialog extends JDialog {
                 FeaturePatternDialog.showEditor(BuilderConfigDialog.this, pattern);
                 featuresModel.fireTableDataChanged();
             } else {
-                SwingHelper.showErrorDialog(BuilderConfigDialog.this, "Select a feature first.", "No Selection");
+                SwingHelper.showErrorDialog(BuilderConfigDialog.this, "\uae30\ub2a5\uc744 \uba3c\uc800 \uc120\ud0dd\ud558\uc138\uc694.", "\uc120\ud0dd \ud56d\ubaa9 \uc5c6\uc74c");
             }
         });
 
@@ -187,11 +187,11 @@ public class BuilderConfigDialog extends JDialog {
             int index = featuresTable.getSelectedRow();
             if (index > -1) {
                 FeaturePattern pattern = featuresModel.getFeature(index);
-                if (SwingHelper.confirmDialog(BuilderConfigDialog.this, "Are you sure that you want to delete '" + pattern.getFeature().getName() + "'?", "Delete")) {
+                if (SwingHelper.confirmDialog(BuilderConfigDialog.this, "'" + pattern.getFeature().getName() + "' \ud56d\ubaa9\uc744 \uc815\ub9d0 \uc81c\uac70\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?", "\uc81c\uac70")) {
                     featuresModel.removeFeature(index);
                 }
             } else {
-                SwingHelper.showErrorDialog(BuilderConfigDialog.this, "Select a feature first.", "No Selection");
+                SwingHelper.showErrorDialog(BuilderConfigDialog.this, "\uae30\ub2a5\uc744 \uba3c\uc800 \uc120\ud0dd\ud558\uc138\uc694.", "\uc120\ud0dd \ud56d\ubaa9 \uc5c6\uc74c");
             }
         });
 

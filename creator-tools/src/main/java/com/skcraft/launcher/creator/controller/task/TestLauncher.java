@@ -61,8 +61,7 @@ public class TestLauncher implements Function<InstanceList, Instance>, ProgressO
             return optional.get();
         } else {
             SwingHelper.showErrorDialog(window,
-                    "After generating the necessary files, it appears the modpack can't be found in the " +
-                            "launcher. Did you change modpack.json while the launcher was launching?", "Launch Error");
+                    "\ud544\uc694\ud55c \ud30c\uc77c\uc744 \uc0dd\uc131\ud55c \ud6c4 \ub7f0\ucc98\uc5d0\uc11c \ubaa8\ub4dc\ud329\uc744 \ucc3e\uc744 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4. \uc2e4\ud589 \ub3c4\uc911 modpack.json\uc774 \ubcc0\uacbd\ub41c \uac83 \uac19\uc2b5\ub2c8\ub2e4.", "\uc2e4\ud589 \uc624\ub958");
 
             return null;
         }
@@ -75,7 +74,7 @@ public class TestLauncher implements Function<InstanceList, Instance>, ProgressO
 
     @Override
     public String getStatus() {
-        return "Launching the game...";
+        return "\uac8c\uc784\uc744 \uc2e4\ud589\ud558\ub294 \uc911...";
     }
 
 }
