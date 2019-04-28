@@ -23,7 +23,9 @@ import com.skcraft.launcher.LauncherUtils;
 import com.skcraft.launcher.model.loader.InstallProfile;
 import com.skcraft.launcher.model.minecraft.Library;
 import com.skcraft.launcher.model.minecraft.VersionManifest;
+import com.skcraft.launcher.model.modpack.LauncherJSON;
 import com.skcraft.launcher.model.modpack.Manifest;
+import com.skcraft.launcher.model.modpack.ModpackVersion;
 import com.skcraft.launcher.util.Environment;
 import com.skcraft.launcher.util.HttpRequest;
 import com.skcraft.launcher.util.SimpleLogFormatter;
@@ -214,7 +216,6 @@ public class PackageBuilder {
     public void downloadLibraries(File librariesDir) throws IOException, InterruptedException {
         logSection("\ub77c\uc774\ube0c\ub7ec\ub9ac \ub2e4\uc6b4\ub85c\ub4dc \uc911...");
 
-        // TODO: Download libraries for different environments -- As of writing, this is not an issue
         Environment env = Environment.getInstance();
 
         for (Library library : loaderLibraries) {
@@ -241,6 +242,7 @@ public class PackageBuilder {
                         pathname = compressor.transformPathname(pathname);
                     }
 
+//                    URL url = new URL(library.getDownloadUrl(env));
                     URL url = new URL(baseUrl + pathname);
                     File tempFile = File.createTempFile("launcherlib", null);
 
@@ -296,9 +298,7 @@ public class PackageBuilder {
 
             log.info(path.getAbsolutePath() + " \uc5d0\uc11c \ubc84\uc804 \ub9e4\ub2c8\ud398\uc2a4\ud2b8\ub97c \ubd88\ub7ec\uc634");
         } else {
-            URL url = url(String.format(
-                    properties.getProperty("versionManifestUrl"),
-                    manifest.getGameVersion()));
+            URL url = Launcher.getMetaURL(manifest.getGameVersion());
 
             log.info(url + " \uc5d0\uc11c \ubc84\uc804 \ub9e4\ub2c8\ud398\uc2a4\ud2b8\ub97c \uac00\uc838 \uc624\ub294 \uc911...");
 
@@ -310,7 +310,6 @@ public class PackageBuilder {
                     .asJson(VersionManifest.class));
         }
     }
-
     public void writeManifest(@NonNull File path) throws IOException {
         logSection("\ub9e4\ub2c8\ud398\uc2a4\ud2b8 \uc791\uc131 \uc911...");
 

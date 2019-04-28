@@ -7,6 +7,7 @@
 package com.skcraft.launcher.swing;
 
 import com.skcraft.launcher.LauncherUtils;
+import com.skcraft.launcher.util.HttpRequest;
 import lombok.extern.java.Log;
 
 import javax.swing.*;
@@ -244,28 +245,13 @@ public final class WebpagePanel extends JPanel {
         
         @Override
         public void run() {
-            HttpURLConnection conn = null;
+            HttpRequest httpRequest = null;
+//            HttpURLConnection conn = null;
 
             try {
-                conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestMethod("GET");
-                conn.setUseCaches(false);
-                conn.setDoInput(true);
-                conn.setDoOutput(false);
-                conn.setReadTimeout(5000);
-
-                conn.connect();
-
-                checkInterrupted();
-
-                if (conn.getResponseCode() != 200) {
-                    throw new IOException(
-                            "Did not get expected 200 code, got "
-                                    + conn.getResponseCode());
-                }
-
+                httpRequest = HttpRequest.get(url).execute();
                 BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(conn.getInputStream(),
+                        new InputStreamReader(httpRequest.getInputStream(),
                                 "UTF-8"));
 
                 StringBuilder s = new StringBuilder();
@@ -275,7 +261,7 @@ public final class WebpagePanel extends JPanel {
                     s.append(buf, 0, len);
                 }
                 String result = s.toString();
-                
+
                 checkInterrupted();
 
                 setDisplay(result, LauncherUtils.concat(url, ""));
@@ -288,9 +274,14 @@ public final class WebpagePanel extends JPanel {
                 setError("Failed to fetch page: " + e.getMessage());
             } catch (InterruptedException e) {
             } finally {
-                if (conn != null)
-                    conn.disconnect();
-                conn = null;
+                if (httpRequest != null) {
+                    try {
+                        httpRequest.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                httpRequest = null;
             }
         }
     }

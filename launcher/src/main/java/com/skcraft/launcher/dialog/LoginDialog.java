@@ -145,9 +145,19 @@ public class LoginDialog extends JDialog {
         offlineButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setResult(new OfflineSession(launcher.getProperties().getProperty("offlinePlayerName")));
-                removeListeners();
-                dispose();
+                Object selected = idCombo.getSelectedItem();
+                if(selected!=null && selected instanceof Account){
+                    Account ac = (Account) selected;
+                    if(ac.getId().length()>=3&&ac.getId().length()<=16) {
+                        setResult(new OfflineSession(ac.getId()));
+                        removeListeners();
+                        dispose();
+                    }else{
+                        SwingHelper.showErrorDialog(formPanel, SharedLocale.tr("login.badLoginLength"), SharedLocale.tr("login.noLoginTitle"));
+                    }
+                }else{
+                    SwingHelper.showErrorDialog(formPanel, SharedLocale.tr("login.noLoginError"), SharedLocale.tr("login.noLoginTitle"));
+                }
             }
         });
 
